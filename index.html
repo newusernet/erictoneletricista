@@ -3,69 +3,64 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Titulo aleatório</title>
+    <title>Ericton Eletricista</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style type="text/css">
-        *{
+        * {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            box-sizing: border-box;
         }
 
-        .header{
-            width: 100%;
-            height: 100px;
+        /* Estilos para o cabeçalho */
+        .header {
             background-color: black;
-        }
-        .header img{
-            margin-left: 30px;
-            margin-top: 30px;
-        }
-
-        .header h2{
-            width: 200px;
-            height: 35px;
-            padding: 2px;
-            background-color: #48D1CC ;
-            border: 1px solid white;
-            margin-left: 300px;
-            margin-top: -200px;
-            color: #F0F8FF;
-            font-size: 26px;
+            padding: 20px;
             text-align: center;
         }
 
-        .header p{
-            text-align: right;
-            margin-top: -90px;
-            margin-right: 200px;
-            font-size: 20px;
+        .header img {
+            width: 100%;
+            max-width: 300px; /* Tamanho máximo da imagem */
+            height: auto;
+        }
+
+        .header h2 {
+            background-color: grey;
+            color: black;
+            font-size: 24px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .header p {
             color: white;
+            font-size: 15px;
+            margin-top: 10px;
         }
 
-        body{
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
+        /* Estilos para o formulário */
         .container {
-            width: 50%;
-            margin: 0 auto;
+            width: 80%;
+            margin: 20px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
         input[type="text"], input[type="email"], input[type="tel"], select, textarea, input[type="submit"] {
-            width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+            width: 100%;
         }
 
         input[type="submit"] {
@@ -78,71 +73,96 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
+
+        /* Media queries para dispositivos móveis */
+        @media screen and (max-width: 600px) {
+            .header {
+                padding: 10px;
+            }
+
+            .header img {
+                max-width: 200px;
+            }
+
+            .header h2 {
+                font-size: 20px;
+            }
+
+            .header p {
+                font-size: 14px;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            form {
+                display: block;
+            }
+
+            input[type="text"], input[type="email"], input[type="tel"], select, textarea, input[type="submit"] {
+                width: calc(100% - 20px); /* Adiciona margens laterais */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="imagens/logo.jpg" width="200px" height="200px" alt="Logo">
-        <h2>Titulo</h2>
-        <p>Acesse nossas redes sociais! <a href="#"><img src="imagens/inst.png" width="35px" height="35px" alt="Instagram"></a>
-            <a href="#"><img src="imagens/face.png" width="35px" height="35px" alt="Facebook"></a></p>
+        <img src="imagens/logo2.png" alt="Logo">
+        <h2>Ericton Boszard</h2>
+        <p>Sobre mim: "Estou no mercado como eletricista há mais de 8 anos, com experiência variada em instalações residenciais e prediais. Atualmente, resido em Esteio, porém, atendo toda a região, combinando dia e horário conforme avaliação das necessidades do cliente."</p>
     </div><!-- header -->
     <div class="container">
-    <h2>Formulário de Venda de Produtos</h2>
-    <form id="pedidoForm" action="#" method="post">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+        <h2>Preencha os campos do formulário para que eu possa atendê-lo melhor!</h2>
+        <form id="pedidoForm" action="#" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required>
 
-        <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone" required>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
 
-        <label for="produto">Produto:</label>
-        <select id="produto" name="produto" required>
-            <option value="">Selecione um produto</option>
-            <option value="produto1">Produto 1</option>
-            <option value="produto2">Produto 2</option>
-            <option value="produto3">Produto 3</option>
-        </select>
+            <label for="servico">Serviço:</label>
+            <select id="servico" name="servico" required>
+                <option value="">Selecione um serviço:</option>
+                <option value="residencial">Residencial</option>
+                <option value="predial">Predial</option>
+                <option value="empresarial">Empresarial</option>
+            </select>
 
-        <label for="quantidade">Quantidade:</label>
-        <input type="number" id="quantidade" name="quantidade" min="1" required>
+            <label for="mensagem">Por favor, descreva detalhadamente o serviço desejado abaixo:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
 
-        <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            <input type="submit" value="ENVIAR PARA O WHATSAPP">
+        </form>
+    </div>
 
-        <input type="submit" value="Enviar Pedido no Whatsapp">
-    </form>
-</div>
+    <script>
+    document.getElementById('pedidoForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
 
-<script>
-document.getElementById('pedidoForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
+        // Pega os valores do formulário
+        var nome = document.getElementById('nome').value;
+        var cidade = document.getElementById('cidade').value;
+        var telefone = document.getElementById('telefone').value;
+        var servico = document.getElementById('servico').value;
+        var mensagem = document.getElementById('mensagem').value;
 
-    // Pega os valores do formulário
-    var nome = document.getElementById('nome').value;
-    var email = document.getElementById('email').value;
-    var telefone = document.getElementById('telefone').value;
-    var produto = document.getElementById('produto').value;
-    var quantidade = document.getElementById('quantidade').value;
-    var mensagem = document.getElementById('mensagem').value;
+        // Constrói a mensagem para o WhatsApp
+        var whatsappMessage = "Olá! Meu nome é " + nome + ", minha cidade é " + cidade + ", meu telefone é " + telefone + ". Gostaria de solicitar o serviço " + servico + ". Mensagem: " + mensagem;
 
-    // Constrói a mensagem para o WhatsApp
-    var whatsappMessage = "Olá! Meu nome é " + nome + ", meu email é " + email + ", meu telefone é " + telefone + ". Gostaria de encomendar " + quantidade + " unidades do produto " + produto + ". Mensagem: " + mensagem;
+        // Codifica a mensagem para o formato de URL
+        var encodedMessage = encodeURIComponent(whatsappMessage);
 
-    // Codifica a mensagem para o formato de URL
-    var encodedMessage = encodeURIComponent(whatsappMessage);
+        // Constrói o link do WhatsApp com a mensagem
+        var whatsappLink = "https://wa.me/5551999509808?text=" + encodedMessage;
 
-    // Constrói o link do WhatsApp com a mensagem
-    var whatsappLink = "https://wa.me/5551998061961text=" + encodedMessage;
-
-    // Redireciona para o link do WhatsApp
-    window.location.href = whatsappLink;
-});
-</script>
+        // Redireciona para o link do WhatsApp
+        window.location.href = whatsappLink;
+    });
+    </script>
 
 </body>
 </html>
-
